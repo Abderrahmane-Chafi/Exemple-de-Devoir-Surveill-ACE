@@ -1,0 +1,24 @@
+type Query {
+getAvionByModel(model: String) : Avion
+getAvionByModelAndPrice(model :String, price:Float): Avion
+}
+
+type Mutation{
+    saveAvion( avion: AvionRequest): Avion
+    deleteAvion(id: ID!): String
+}
+
+type Avion{
+    id:ID!
+    model:String
+    color:String
+    matricul:String
+    price:Float
+}
+
+input AvionRequest {
+    model: String
+    color: String
+    matricul: String
+    price:Float
+}
